@@ -1,0 +1,25 @@
+# 端口
+server:
+  port: 9999
+
+# mysql配置
+spring:
+  datasource:
+    driver-class-name: com.p6spy.engine.spy.P6SpyDriver
+#    url: jdbc:mysql://182.92.157.243:3306/studySpring
+    url: jdbc:p6spy:mysql://182.92.157.243:3306/studySpring
+    username: root
+    password: 123456
+
+# SQL 语句生成
+mybatis-plus:
+#  configuration:
+#    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+  global-config:
+    db-config:
+      logic-delete-field: flag   #全局逻辑删除字段值 3.3.0开始支持，详情看下面。
+      logic-delete-value: 1 # 逻辑已删除值(默认为 1)
+      logic-not-delete-value: 0 # 逻辑未删除值(默认为 0)
+
+# p6spy配置
+
